@@ -1815,7 +1815,6 @@ function showProfileTab(tab) {
   }
 }
 
-// ===================================================
 // OFFERS
 // ===================================================
 function renderOffers() {
@@ -1823,7 +1822,7 @@ function renderOffers() {
   document.getElementById('offersGrid').innerHTML = deal.map(productCard).join('');
 }
 
-// ===================================================
+
 // SEARCH
 // ===================================================
 function handleSearch(val) {
@@ -1850,7 +1849,6 @@ function doSearch() {
   renderCategory('search');
 }
 
-// ===================================================
 // TOAST
 // ===================================================
 function showToast(msg, type='') {
@@ -1863,7 +1861,6 @@ function showToast(msg, type='') {
   setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateX(100%)'; t.style.transition='all .3s'; setTimeout(()=>t.remove(),300); }, 3000);
 }
 
-// ===================================================
 // COUNTDOWN TIMER
 // ===================================================
 function startCountdown() {
@@ -1878,9 +1875,7 @@ function startCountdown() {
   }, 1000);
 }
 
-// ===================================================
 // PAYMENT TOGGLE
-// ===================================================
 document.addEventListener('change', e=>{
   if (e.target.name==='payment') {
     const upiF = document.getElementById('upiField');
@@ -1895,9 +1890,7 @@ document.addEventListener('click', e=>{
   }
 });
 
-// ===================================================
 // INIT
-// ===================================================
 function init() {
   updateAuthUI();
   updateCartBadge();
@@ -1907,11 +1900,6 @@ function init() {
 }
 
 init();
-  <script src="products.js"></script>
-<script src="auth.js"></script>
-<script src="cart.js"></script>
-<script src="api.js"></script>
-<script src="App.js"></script>
 </script>
 </body>
 </html>

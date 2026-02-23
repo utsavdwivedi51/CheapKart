@@ -1,4 +1,4 @@
-# 🛍️ Cheapkart — React + Node.js + MongoDB
+# Cheapkart - React + Node.js + MongoDB
 
 A full-stack e-commerce marketplace (Flipkart-inspired) built with:
 
@@ -8,7 +8,7 @@ A full-stack e-commerce marketplace (Flipkart-inspired) built with:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 cheapkart/
@@ -37,7 +37,7 @@ cheapkart/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+
@@ -93,19 +93,19 @@ Proxies API calls to `http://localhost:5000` (via `"proxy"` in package.json).
 |--------|----------|-------------|------|
 | POST | `/api/auth/register` | Create account | — |
 | POST | `/api/auth/login` | Login | — |
-| GET | `/api/auth/me` | Get current user | 🔒 |
-| PUT | `/api/auth/profile` | Update name/mobile/gender/dob | 🔒 |
-| PUT | `/api/auth/change-password` | Change password | 🔒 |
+| GET | `/api/auth/me` | Get current user |
+| PUT | `/api/auth/profile` | Update name/mobile/gender/dob |
+| PUT | `/api/auth/change-password` | Change password |
 
 ### Products
 | Method | Endpoint | Query Params | Auth |
 |--------|----------|--------------|------|
-| GET | `/api/products` | `category`, `q`, `sort`, `minPrice`, `maxPrice`, `page`, `limit` | — |
-| GET | `/api/products/:id` | — | — |
+| GET | `/api/products` | `category`, `q`, `sort`, `minPrice`, `maxPrice`, `page`, `limit` | - |
+| GET | `/api/products/:id` | - | - |
 
 **Sort options**: `price_asc`, `price_desc`, `rating`, `newest`
 
-### Orders 🔒
+### Orders
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/api/orders` | Place order |
@@ -113,13 +113,13 @@ Proxies API calls to `http://localhost:5000` (via `"proxy"` in package.json).
 | GET | `/api/orders/:id` | Get single order by id or orderId |
 | PUT | `/api/orders/:id/cancel` | Cancel order |
 
-### Wishlist 🔒
+### Wishlist
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/wishlist` | Get wishlist (array of product IDs) |
 | POST | `/api/wishlist/:productId` | Toggle product (add/remove) |
 
-### Addresses 🔒
+### Addresses
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/addresses` | Get all saved addresses |
@@ -128,11 +128,11 @@ Proxies API calls to `http://localhost:5000` (via `"proxy"` in package.json).
 | DELETE | `/api/addresses/:id` | Delete address |
 | PATCH | `/api/addresses/:id/default` | Set as default address |
 
-🔒 = Requires `Authorization: Bearer <token>` header
+ Requires `Authorization: Bearer <token>` header
 
 ---
 
-## 🗺️ Frontend Routes
+## Frontend Routes
 
 | Path | Page |
 |------|------|
@@ -150,7 +150,7 @@ Proxies API calls to `http://localhost:5000` (via `"proxy"` in package.json).
 
 ---
 
-## 🔧 Connecting Frontend to Backend API
+## Connecting Frontend to Backend API
 
 The frontend uses localStorage for state by default. To switch to full API mode, update `AppContext.js` using the `src/api/api.js` service layer:
 
@@ -167,7 +167,7 @@ const login = async (email, password) => {
 
 ---
 
-## 🗃️ MongoDB Schemas
+## MongoDB Schemas
 
 ### User
 - `name`, `email` (unique), `mobile`, `password` (hashed, select: false), `avatar`
@@ -184,7 +184,7 @@ const login = async (email, password) => {
 
 ---
 
-## 🚀 Production Deployment
+## Production Deployment
 
 ### Frontend → Vercel / Netlify
 ```bash
@@ -205,26 +205,24 @@ FRONTEND_URL=https://your-frontend.com
 
 ---
 
-## ✨ Features
+## Features
 
-| Feature | Status |
-|---------|--------|
-| 🏠 Home page with hero slider (4 slides, auto-advance) | ✅ |
-| ⚡ Flash sale with live countdown timer | ✅ |
-| 🔍 Live search with autocomplete dropdown | ✅ |
-| 📦 Category browsing with filters & sorting | ✅ |
-| 🛒 Cart with quantity controls & price breakdown | ✅ |
-| ❤️ Wishlist with move-to-cart | ✅ |
-| 💳 3-step checkout (Address → Summary → Payment) | ✅ |
-| 📋 Order history with status tracking | ✅ |
-| 👤 User profile with 6 tabs | ✅ |
-| ⭐ Cheapkart Plus membership page | ✅ |
-| 🔔 Notifications page | ✅ |
-| 🔐 JWT auth with bcrypt password hashing | ✅ |
-| 📱 Fully responsive (mobile/tablet/desktop) | ✅ |
-| 🎉 Toast notifications with animations | ✅ |
-| 💾 localStorage persistence (offline-first) | ✅ |
-| 🗄️ MongoDB persistence (backend) | ✅ |
-| 📍 Addresses CRUD API | ✅ |
+| Home page with hero slider (4 slides, auto-advance) |
+| Flash sale with live countdown timer |
+| Live search with autocomplete dropdown |
+| Category browsing with filters & sorting |
+| Cart with quantity controls & price breakdown |
+| Wishlist with move-to-cart |
+| 3-step checkout (Address → Summary → Payment) |
+| Order history with status tracking |
+| User profile with 6 tabs |
+| Cheapkart Plus membership page |
+| Notifications page |
+| JWT auth with bcrypt password hashing |
+| Fully responsive (mobile/tablet/desktop) |
+| Toast notifications with animations |
+| localStorage persistence (offline-first) |
+| MongoDB persistence (backend) |
+| Addresses CRUD API |
 | 🔑 Password change | ✅ |
 | ❌ Order cancellation | ✅ |

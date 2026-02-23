@@ -37,56 +37,10 @@ cheapkart/
 
 ---
 
-## Getting Started
-
-### Prerequisites
-- Node.js 18+
-- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
-
+```
 ---
 
-### 1. Backend Setup
-
-```bash
-cd backend
-npm install
-```
-
-Edit `.env`:
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/cheapkart
-JWT_SECRET=your_secret_key_here_minimum_32_chars
-JWT_EXPIRES_IN=7d
-NODE_ENV=development
-FRONTEND_URL=http://localhost:3000
-```
-
-Start the server:
-```bash
-npm run dev      # development (nodemon)
-npm start        # production
-```
-
-API runs at `http://localhost:5000`  
-Health check: `http://localhost:5000/api/health`
-
----
-
-### 2. Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-React app runs at `http://localhost:3000`  
-Proxies API calls to `http://localhost:5000` (via `"proxy"` in package.json).
-
----
-
-## 📡 API Reference
+## API Reference
 
 ### Auth
 | Method | Endpoint | Description | Auth |
@@ -152,18 +106,7 @@ Proxies API calls to `http://localhost:5000` (via `"proxy"` in package.json).
 
 ## Connecting Frontend to Backend API
 
-The frontend uses localStorage for state by default. To switch to full API mode, update `AppContext.js` using the `src/api/api.js` service layer:
-
-```js
-import { authAPI, saveAuthToken } from './api/api';
-
-// In AppContext — replace mock login with real API call:
-const login = async (email, password) => {
-  const { data } = await authAPI.login(email, password);
-  saveAuthToken(data.token);
-  dispatch({ type: 'LOGIN', payload: data.data.user });
-};
-```
+The frontend uses localStorage for state by default. To switch to full API mode, updated `AppContext.js` using the `api.js` service layer
 
 ---
 
@@ -186,43 +129,27 @@ const login = async (email, password) => {
 
 ## Production Deployment
 
-### Frontend → Vercel / Netlify
-```bash
-cd frontend
-npm run build
-# Deploy the build/ folder
-# Set REACT_APP_API_URL=https://your-api.com/api in env vars
-```
-
-### Backend → Railway / Render / EC2
-```bash
-# Set environment variables in dashboard:
-NODE_ENV=production
-MONGODB_URI=mongodb+srv://...  # MongoDB Atlas URI
-JWT_SECRET=<strong random key>
-FRONTEND_URL=https://your-frontend.com
-```
-
----
+### Frontend → Vercel
+### Backend → Render
 
 ## Features
 
-| Home page with hero slider (4 slides, auto-advance) |
-| Flash sale with live countdown timer |
-| Live search with autocomplete dropdown |
-| Category browsing with filters & sorting |
-| Cart with quantity controls & price breakdown |
-| Wishlist with move-to-cart |
-| 3-step checkout (Address → Summary → Payment) |
-| Order history with status tracking |
-| User profile with 6 tabs |
-| Cheapkart Plus membership page |
-| Notifications page |
-| JWT auth with bcrypt password hashing |
-| Fully responsive (mobile/tablet/desktop) |
-| Toast notifications with animations |
-| localStorage persistence (offline-first) |
-| MongoDB persistence (backend) |
-| Addresses CRUD API |
-| 🔑 Password change | ✅ |
-| ❌ Order cancellation | ✅ |
+- Home page with hero slider (4 slides, auto-advance)
+- Flash sale with live countdown timer 
+- Live search with autocomplete dropdown 
+- Category browsing with filters & sorting 
+- Cart with quantity controls & price breakdown 
+- Wishlist with move-to-cart 
+- 3-step checkout (Address → Summary → Payment) 
+- Order history with status tracking 
+- User profile with 6 tabs 
+- Cheapkart Plus membership page 
+- Notifications page 
+- JWT auth with bcrypt password hashing 
+- Fully responsive (mobile/tablet/desktop) 
+- Toast notifications with animations 
+- localStorage persistence (offline-first) 
+- MongoDB persistence (backend) 
+- Addresses CRUD API 
+- Password change 
+- Order cancellation 
